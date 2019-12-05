@@ -9,15 +9,16 @@ public class SwordController : MonoBehaviour
 
     void Start()
     {
-        sword = transform.Find("Sword").gameObject;                          // a 
+        sword = transform.Find("Sword").gameObject;
         dray = transform.parent.GetComponent<Dray>();
-        // Deactivate the sword 
-        sword.SetActive(false);                                              // b 
+
+        // Deactivate the sword
+        sword.SetActive(false);
     }
 
     void Update()
     {
-        transform.rotation = Quaternion.Euler(0, 0, 90 * dray.facing);       // c 
-        sword.SetActive(dray.mode == Dray.eMode.attack);                     // d 
+        transform.rotation = Quaternion.Euler(0, 0, 90 * dray.facing);
+        sword.SetActive(dray.mode == Dray.eMode.attack);
     }
 }
